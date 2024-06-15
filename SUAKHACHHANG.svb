@@ -1,0 +1,41 @@
+﻿Sub SUAKHACHHANG()
+    ' Khởi động ứng dụng
+    TestedApps.DoAn_2.Run
+    ' Tham chiếu tới cửa sổ chính của ứng dụng
+    Set mainWindow = Aliases.DoAn_2.Form1
+    ' Đợi cho Form1 xuất hiện
+    Delay(2000)
+    ' Nhập thông tin tài khoản và mật khẩu
+    mainWindow.txtUser.SetText "admin"
+    mainWindow.txtpass.SetText "111"
+    ' Nhấn nút Đăng nhập
+    mainWindow.btnlogin.ClickButton
+    Delay(2000)
+    ' Tham chiếu tới cửa sổ chính của ứng dụng
+    Set Maincontrol = Aliases.DoAn_2.MainControl
+    Maincontrol.PanelMenu.btnkh.ClickButton
+    Delay(2000)
+    'Maincontrol.paneltrangcon.KhachHang.dataGridViewKH.MouseWheel 0
+    'Delay(2000)
+    Maincontrol.paneltrangcon.KhachHang.dataGridViewKH.ClickCell 3, "Tên khách hàng", skNoShift
+    Delay(2000)
+    Maincontrol.paneltrangcon.KhachHang.txtTenKH.SetText "Lê Quốc Công"
+    Delay(2000)
+    Maincontrol.paneltrangcon.KhachHang.txts_tkh.SetText "0345678912"
+    Delay(2000)
+    Maincontrol.paneltrangcon.KhachHang.txtdiachikh.SetText "phù mỹ"
+    Delay(2000)
+    Maincontrol.paneltrangcon.KhachHang.txtemailkh.SetText "vinhquoc@gmail.com"
+    Delay(2000)
+    Maincontrol.paneltrangcon.KhachHang.BtnSua.ClickButton
+    Delay(2000)
+    Set dlgok = Aliases.DoAn_2.dlg
+    dlgok.btnOK.ClickButton
+    Delay(2000)
+    Maincontrol.paneltrangcon.KhachHang.BtnSua.ClickButton
+    Delay(2000)
+    Set dlgok = Aliases.DoAn_2.dlg
+    dlgok.btnOK.ClickButton
+    ' Đóng ứng dụng
+    TestedApps.DoAn_2.Close
+End Sub

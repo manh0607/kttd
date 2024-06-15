@@ -1,0 +1,29 @@
+﻿Sub LOGIN_THANHCONG()
+    On Error Resume Next
+    
+    ' Khởi động ứng dụng
+    TestedApps.DoAn_2.Run
+   
+    ' Tham chiếu tới cửa sổ chính của ứng dụng
+    Set mainWindow = Aliases.DoAn_2.Form1
+    
+    
+    ' Đợi cho Form1 xuất hiện
+    Delay(2000)
+    
+    ' Nhập thông tin tài khoản và mật khẩu
+    mainWindow.txtUser.SetText "admin"
+    mainWindow.txtpass.SetText "111"
+    
+    ' Nhấn nút Đăng nhập
+    mainWindow.btnlogin.ClickButton
+    
+    Delay(2000)
+    
+    ' Tham chiếu tới cửa sổ chính của ứng dụng
+    Set Maincontrol = Aliases.DoAn_2.MainControl
+    Delay(2000)
+    
+    ' Đóng ứng dụng
+    TestedApps.DoAn_2.Close
+End Sub
